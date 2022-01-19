@@ -1,0 +1,21 @@
+$alt-color: #dfdfdf;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 15px;
+}

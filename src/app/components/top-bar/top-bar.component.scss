@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+
+header {
+  background-color: $alt-color;
+  height: 100px;
+  padding: 10px 0;
+}
+
+.navigation {
+  transition: 1.8s;
+}
+
+.navigation__item {
+  padding-top: 10px;
+  
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+    
