@@ -12,4 +12,9 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isNavShown = true;
+  toggleNavigation(): void {
+    this.isNavShown = !this.isNavShown;
+  }
+
 }

@@ -1,0 +1,21 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 50vw;
+  padding-top: 150px;
+  padding-left: 20px;
+  background-color: rgba(221, 221, 221, 0.63);
+}
+  
+  .navigation__item {
+    padding-top: 10px;
+    
+  
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+

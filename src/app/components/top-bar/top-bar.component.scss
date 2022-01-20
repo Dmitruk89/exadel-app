@@ -2,21 +2,20 @@
 
 header {
   background-color: $alt-color;
-  height: 200px;
+  height: 100px;
   padding: 10px 0;
 }
 
-.navigation {
-  transition: 1.8s;
+.icon-container {
+  float: right;
 }
 
-.navigation__item {
-  padding-top: 10px;
-  
+.burger-button {
+  cursor: pointer;
+  margin: 10px;
+}
 
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
+.visible {
+  left: 100px;
 }
     

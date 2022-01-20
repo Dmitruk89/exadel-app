@@ -1,12 +1,10 @@
 <header>
   <div class="wrapper">
-    <nav>
-      <ul class="navigation">
-        <a routerLink="/home">Home</a>
-        <li routerLink="/products" class="navigation__item">Products</li>
-        <li routerLink="/user-page" class="navigation__item">User page</li>
-        <li routerLink="/contacts" class="navigation__item">Contacts</li>
-      </ul>
-    </nav>
+    <app-navigation *ngIf="isNavShown"></app-navigation>
+    <div class="icon-container">
+      <a class="burger-button">User</a>
+      <a class="burger-button">Cart</a>
+      <a class="burger-button" (click)="toggleNavigation()">Burger</a>
+    </div>
   </div>
 </header>
