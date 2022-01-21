@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navigationService: NavigationService) { }
+  isNavShown = false;
 
   ngOnInit(): void {
+    this.navigationService.isNavigationShown.subscribe(data => {
+      this.isNavShown = data;
+    })
   }
 
-  isNavShown = true;
   toggleNavigation(): void {
-    this.isNavShown = !this.isNavShown;
+    this.navigationService.isNavigationShown.next(!this.isNavShown);
   }
 
 }
