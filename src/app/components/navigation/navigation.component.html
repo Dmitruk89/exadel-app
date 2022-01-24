@@ -1,8 +1,8 @@
 <nav>
   <ul [ngClass]="{'visible': isNavShown}" class="navigation">
-    <li (click)="toggleNav()" routerLink="/home" class="navigation__item">Home</li>
-    <li (click)="toggleNav()" routerLink="/products" class="navigation__item">Products</li>
-    <li (click)="toggleNav()" routerLink="/user-page" class="navigation__item">User page</li>
-    <li (click)="toggleNav()" routerLink="/contacts" class="navigation__item">Contacts</li>
+    <li (click)="closeNav()" routerLink="/home" class="navigation__item">Home</li>
+    <li (click)="closeNav()" routerLink="/products" class="navigation__item">Products</li>
+    <li (click)="closeNav()" routerLink="/user-page" class="navigation__item">User page</li>
+    <li (click)="closeNav()" routerLink="/contacts" class="navigation__item">Contacts</li>
   </ul>
 </nav>

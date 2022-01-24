@@ -1,4 +1,5 @@
 $alt-color: #dfdfdf;
+$font-color: #000000;
 
 * {
   margin: 0;
@@ -12,6 +13,12 @@ body {
 
 li {
   list-style: none;
+}
+
+a {
+  &:visited {
+    color: $font-color;
+  }
 }
 
 .wrapper {

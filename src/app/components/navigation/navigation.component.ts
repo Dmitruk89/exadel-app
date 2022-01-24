@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
     });
   }
 
-  toggleNav(): void {
+  closeNav(): void {
     this.navigationService.isNavigationShown.next(false);
   }
 }
