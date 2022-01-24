@@ -4,21 +4,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-
-  constructor(private navigationService: NavigationService) { }
+  constructor(private navigationService: NavigationService) {}
   isNavShown = false;
 
-  ngOnInit() {
-    this.navigationService.isNavigationShown.subscribe(data => {
+  ngOnInit(): void {
+    this.navigationService.isNavigationShown.subscribe((data: boolean) => {
       this.isNavShown = data;
-    })
+    });
   }
 
-  toggleNav(){
+  toggleNav(): void {
     this.navigationService.isNavigationShown.next(false);
   }
-
 }
