@@ -10,7 +10,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faBars, faCartArrowDown, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
@@ -32,7 +32,9 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    // Add an icon to the library for convenient access in other components
     library.addIcons(faTimes);
+    library.addIcons(faBars);
+    library.addIcons(faCartArrowDown);
+    library.addIcons(faUser);
   }
 }

@@ -1,17 +1,12 @@
 .navigation {
   position: fixed;
   top: 0;
-  left: -50vw;
   height: 100vh;
   width: 50vw;
   padding-top: 150px;
   padding-left: 20px;
   background-color: rgba(221, 221, 221, 0.63);
   transition: .5s;
-}
-
-.visible {
-  left: 0;
 }
   
 .navigation__item {

@@ -1,8 +1,16 @@
 <nav>
-  <ul [ngClass]="{'visible': isNavShown}" class="navigation">
-    <li (click)="closeNav()" routerLink="/home" class="navigation__item">Home</li>
-    <li (click)="closeNav()" routerLink="/products" class="navigation__item">Products</li>
-    <li (click)="closeNav()" routerLink="/user-page" class="navigation__item">User page</li>
-    <li (click)="closeNav()" routerLink="/contacts" class="navigation__item">Contacts</li>
+  <ul [@openClose]="isVisible ? 'open' : 'closed'" (click)="hide()" class="navigation">
+    <li class="navigation__item">
+      <a routerLink="/home">Home</a>
+    </li>
+    <li class="navigation__item">
+      <a routerLink="/products">Products</a>
+    </li>
+    <li class="navigation__item">
+      <a routerLink="/user-page">User page</a>
+    </li>
+    <li class="navigation__item">
+      <a routerLink="/contacts">Contacts</a>
+    </li>
   </ul>
 </nav>

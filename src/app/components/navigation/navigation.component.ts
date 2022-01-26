@@ -1,22 +1,36 @@
-import { NavigationService } from './../../services/navigation.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
+  animations: [
+    trigger('openClose', [
+      transition('open <=> closed', [animate('.3s')]),
+      state(
+        'open',
+        style({
+          left: '0',
+        }),
+      ),
+      state(
+        'closed',
+        style({
+          left: '-50vw',
+        }),
+      ),
+    ]),
+  ],
 })
-export class NavigationComponent implements OnInit {
-  constructor(private navigationService: NavigationService) {}
-  isNavShown = false;
+export class NavigationComponent {
+  isVisible = false;
 
-  ngOnInit(): void {
-    this.navigationService.isNavigationShown.subscribe((data: boolean) => {
-      this.isNavShown = data;
-    });
+  hide(): void {
+    this.isVisible = false;
   }
 
-  closeNav(): void {
-    this.navigationService.isNavigationShown.next(false);
+  toggle(): void {
+    this.isVisible = !this.isVisible;
   }
 }

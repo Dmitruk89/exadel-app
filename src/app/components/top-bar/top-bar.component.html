@@ -1,13 +1,13 @@
 <header>
   <div class="wrapper">
     <div class="header_container">
-      <app-navigation></app-navigation>
+      <app-navigation #navigation></app-navigation>
       <div class="icon-container">
-        <a class="burger-button" (click)="closeNavigation()" routerLink="/user-page"><fa-icon [icon]="faUser"></fa-icon></a>
-        <a class="burger-button" (click)="closeNavigation()" routerLink="/shoping-cart"><fa-icon [icon]="faCartArrowDown"></fa-icon></a>
-        <a class="burger-button" (click)="toggleNavigation()">
-          <fa-icon *ngIf="!isNavShown" [icon]="faBars"></fa-icon>
-          <fa-icon *ngIf="isNavShown" [icon]="['fas', 'times']"></fa-icon>
+        <a class="header_icon" (click)="navigation.hide()" routerLink="/user-page"><fa-icon [icon]="['fas', 'user']"></fa-icon></a>
+        <a class="header_icon" (click)="navigation.hide()" routerLink="/shoping-cart"><fa-icon [icon]="['fas', 'cart-arrow-down']"></fa-icon></a>
+        <a class="header_icon" (click)="navigation.toggle()">
+          <fa-icon *ngIf="!navigation.isVisible" [icon]="['fas', 'bars']"></fa-icon>
+          <fa-icon *ngIf="navigation.isVisible" [icon]="['fas', 'times']"></fa-icon>
         </a>
       </div>
     </div>

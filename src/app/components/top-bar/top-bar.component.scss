@@ -12,12 +12,28 @@ header {
 }
 
 .icon-container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
   float: right;
 }
 
-.burger-button {
-  cursor: pointer;
-  margin: 10px;
+.header_icon {
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  border-radius: 50%;
+  transition: .3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $alt-color;
+  }
+
+  fa-icon {
+    position:relative;
+    top: calc(50% - 10px);
+  }
 }
 
 .visible {
