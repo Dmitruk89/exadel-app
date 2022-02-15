@@ -24,6 +24,11 @@ a {
   }
 }
 
+.icon-container a.active {
+  background-color: black;
+  color: white;
+}
+
 .wrapper {
   width: 95%;
   height: 100%;

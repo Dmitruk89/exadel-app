@@ -1,0 +1,17 @@
+<div [@openClose]="isVisible ? 'open' : 'closed'" (click)="onClick($event)" class="login_container">
+    <div class="login_bar">
+        <a class="header_icon" (click)="hide()">
+            <fa-icon [icon]="['fas', 'times']"></fa-icon>
+        </a>
+        <ul class="login_nav">
+            <li>
+              <a *ngIf="!isLoggedIn" (click)="login()" routerLink="" class="login_nav__item">Login</a>
+              <a *ngIf="isLoggedIn" (click)="logout()" class="login_nav__item">Logout</a>
+            </li>
+            <li class="login_nav__item">
+              <a routerLink="/user-page">User page</a>
+            </li>
+          </ul>
+    </div>
+</div>
+

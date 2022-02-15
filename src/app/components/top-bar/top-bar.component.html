@@ -2,8 +2,14 @@
   <div class="wrapper">
     <div class="header_container">
       <app-navigation #navigation></app-navigation>
+      <app-login #login></app-login>
       <div class="icon-container">
-        <a class="header_icon" (click)="navigation.hide()" routerLink="/user-page"><fa-icon [icon]="['fas', 'user']"></fa-icon></a>
+        <a 
+          class="header_icon" 
+          (click)="navigation.hide(); login.toggle();" 
+          >
+          <fa-icon [icon]="['fas', 'user']"></fa-icon>
+        </a>
         <a class="header_icon" (click)="navigation.hide()" routerLink="/shoping-cart"><fa-icon [icon]="['fas', 'cart-arrow-down']"></fa-icon></a>
         <a class="header_icon" (click)="navigation.toggle()">
           <fa-icon *ngIf="!navigation.isVisible" [icon]="['fas', 'bars']"></fa-icon>
