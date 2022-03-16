@@ -10,7 +10,12 @@
           >
           <fa-icon [icon]="['fas', 'user']"></fa-icon>
         </a>
-        <a class="header_icon" (click)="navigation.hide()" routerLink="/shoping-cart"><fa-icon [icon]="['fas', 'cart-arrow-down']"></fa-icon></a>
+       
+          <a class="header_icon shopping_cart_icon" (click)="navigation.hide()" routerLink="/shoping-cart">
+            <fa-icon icon="shopping-cart"></fa-icon>
+            <div *ngIf="(products$ | async)?.length !== 0" class="products_indicator">{{(products$ | async)?.length}}</div>
+          </a>
+        
         <a class="header_icon" (click)="navigation.toggle()">
           <fa-icon *ngIf="!navigation.isVisible" [icon]="['fas', 'bars']"></fa-icon>
           <fa-icon *ngIf="navigation.isVisible" [icon]="['fas', 'times']"></fa-icon>

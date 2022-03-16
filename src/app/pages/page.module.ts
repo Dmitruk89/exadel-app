@@ -8,8 +8,15 @@ import { CommonModule } from '@angular/common';
 import { PageContainerComponent } from './page-container/page-container.component';
 import { PagesRoutingModule } from './pages-routing.module';
 
-import { faTimes, faBars, faCartArrowDown, faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimes,
+  faBars,
+  faUser,
+  faShoppingCart,
+  faCartPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { ShoppingCartStateModule } from './shopping-cart/shopping-cart-state/shopping-cart.state.module';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,14 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
     NavigationComponent,
     LoginComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule, FontAwesomeModule],
+  imports: [CommonModule, PagesRoutingModule, FontAwesomeModule, ShoppingCartStateModule],
 })
 export class PageModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(faTimes);
     library.addIcons(faBars);
-    library.addIcons(faCartArrowDown);
+    library.addIcons(faCartPlus);
+    library.addIcons(faShoppingCart);
     library.addIcons(faUser);
   }
 }
