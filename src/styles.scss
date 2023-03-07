@@ -1,0 +1,37 @@
+$alt-color: #dfdfdf;
+$font-color: #000000;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+
+  &:visited {
+    color: $font-color;
+  }
+}
+
+.wrapper {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.page{
+  height: calc(100vh - 200px);
+  padding: 10px 0;
+}
