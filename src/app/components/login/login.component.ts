@@ -29,7 +29,6 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
   constructor(public authService: AuthService, public router: Router) {}
   isLoggedIn = this.authService.isLoggedIn;
-  isLoading = false;
   isLoginMode = true;
   isVisible = false;
 
@@ -59,7 +58,7 @@ export class LoginComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    console.log(form.value);
   }
 
   onSwitchMode() {

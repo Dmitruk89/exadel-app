@@ -4,7 +4,7 @@
       <fa-icon [icon]="['fas', 'times']"></fa-icon>
     </a>
     <div class="login_nav">
-      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
         <div class="login_form-group">
           <div class="form-group__item">
             <label for="email">E-mail</label>
