@@ -17,6 +17,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartStateModule } from './shopping-cart/shopping-cart-state/shopping-cart.state.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,13 @@ import { ShoppingCartStateModule } from './shopping-cart/shopping-cart-state/sho
     NavigationComponent,
     LoginComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule, FontAwesomeModule, ShoppingCartStateModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    PagesRoutingModule,
+    FontAwesomeModule,
+    ShoppingCartStateModule,
+  ],
 })
 export class PageModule {
   constructor(library: FaIconLibrary) {
