@@ -1,4 +1,4 @@
-@import "../../../styles.scss";
+@import '../../../styles.scss';
 
 header {
   height: 100px;
@@ -18,18 +18,12 @@ header {
   float: right;
 }
 
-// .shopping_cart_container {
-//   width: 42px;
-//   text-align: center;
-//   position: relative;
-// }
-
 .header_icon {
   width: 42px;
   height: 42px;
   text-align: center;
   border-radius: 50%;
-  transition: .3s;
+  transition: 0.3s;
   position: relative;
 
   &:hover {
@@ -62,4 +56,3 @@ header {
   color: white;
   background-color: $accent-color;
 }
-    

@@ -1,10 +1,5 @@
 import { IProduct } from './../models/product.model';
-import {
-  EProductActions,
-  getProd,
-  GetProducts,
-  //GetProductsSuccess,
-} from './../actions/product.action';
+import { EProductActions, getProd, GetProducts } from './../actions/product.action';
 import { ProductsService } from 'src/app/services/products.service';
 import { Injectable } from '@angular/core';
 import { ofType, Actions, createEffect } from '@ngrx/effects';
