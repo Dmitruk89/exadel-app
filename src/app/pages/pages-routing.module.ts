@@ -14,10 +14,6 @@ const pageRoutes: Routes = [
         path: '',
         children: [
           {
-            path: '',
-            loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-          },
-          {
             path: 'products',
             loadChildren: () => import('./products/products.module').then((m) => m.ProductsModule),
           },
@@ -34,6 +30,11 @@ const pageRoutes: Routes = [
           {
             path: 'contacts',
             loadChildren: () => import('./contacts/contacts.module').then((m) => m.ContactsModule),
+          },
+          {
+            path: '',
+            redirectTo: '/products',
+            pathMatch: 'full',
           },
         ],
       },
