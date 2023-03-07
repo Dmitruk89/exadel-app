@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
