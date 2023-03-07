@@ -17,7 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       state(
         'closed',
         style({
-          left: '-50vw',
+          left: '-100vw',
         }),
       ),
     ]),

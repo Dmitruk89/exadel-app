@@ -3,10 +3,10 @@
     <h2 class="page_title">products</h2>
     <div class="product_card_container">
       <div *ngFor="let product of products$ | async" class="product_card">
-        <img src="{{product.img}}" alt="">
-        <p class="product_name">{{product.name}}</p>
-        <p>{{product.description}}</p>
-        <p class="product_price price">{{product.price | currency}}</p>
+        <img src="{{ product.img }}" alt="" />
+        <p class="product_name">{{ product.name }}</p>
+        <p>{{ product.description }}</p>
+        <p class="product_price price">{{ product.price | currency }}</p>
         <div class="add_to_cart_button" (click)="addToCart(product, $event)">
           <fa-icon icon="cart-plus"></fa-icon>
         </div>
