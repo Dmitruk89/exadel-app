@@ -1,5 +1,7 @@
 $alt-color: #dfdfdf;
 $font-color: #000000;
+$accent-color: #006ac7;
+$accent-hover-color: #0058a3;
 
 * {
   margin: 0;
@@ -24,6 +26,11 @@ a {
   }
 }
 
+.icon-container a.active {
+  background-color: black;
+  color: white;
+}
+
 .wrapper {
   width: 95%;
   height: 100%;
@@ -34,4 +41,18 @@ a {
 .page{
   height: calc(100vh - 200px);
   padding: 10px 0;
+}
+
+.page_title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.price {
+  display: inline-block;
+}
+
+.price::first-letter {
+  padding-right: 0.3em;
 }

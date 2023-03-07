@@ -1,4 +1,4 @@
-@import "../../../styles.scss";
+@import '../../../styles.scss';
 
 header {
   height: 100px;
@@ -23,7 +23,8 @@ header {
   height: 42px;
   text-align: center;
   border-radius: 50%;
-  transition: .3s;
+  transition: 0.3s;
+  position: relative;
 
   &:hover {
     cursor: pointer;
@@ -31,7 +32,7 @@ header {
   }
 
   fa-icon {
-    position:relative;
+    position: relative;
     top: calc(50% - 10px);
   }
 }
@@ -39,4 +40,19 @@ header {
 .visible {
   left: 100px;
 }
-    
+
+.products_indicator {
+  position: absolute;
+  padding: 4px;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  color: white;
+  background-color: $accent-color;
+}
