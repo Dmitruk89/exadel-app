@@ -1,22 +1,58 @@
+@import '../../../styles.scss';
+
+.navigation_icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $alt-color;
+  }
+
+  fa-icon {
+    position: relative;
+    top: calc(50% - 10px);
+  }
+}
+
 .navigation {
   position: fixed;
   top: 0;
   z-index: 10;
-  height: 100vh;
-  width: 50vw;
-  padding-top: 150px;
-  padding-left: 20px;
-  background-color: rgba(221, 221, 221, 0.63);
-  transition: .5s;
+  transition: 0.5s;
 }
-  
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: $overlay-color;
+}
+
+.navigation__container {
+  background-color: $light-color;
+  padding: 20px;
+  height: 100%;
+  width: 50vw;
+}
+
+.navigation__list {
+  padding-top: 150px;
+}
+
 .navigation__item {
   padding-top: 10px;
-    
-  
+
+  a {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
   &:hover {
     cursor: pointer;
     text-decoration: underline;
   }
 }
-
