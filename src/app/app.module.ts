@@ -9,7 +9,7 @@ import { AuthModule } from './auth/auth.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     PageModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(),

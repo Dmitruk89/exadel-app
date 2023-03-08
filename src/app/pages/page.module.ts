@@ -18,6 +18,7 @@ import {
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartStateModule } from './shopping-cart/shopping-cart-state/shopping-cart.state.module';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     TopBarComponent,
     NavigationComponent,
     LoginComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,

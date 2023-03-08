@@ -4,7 +4,7 @@
       <fa-icon [icon]="['fas', 'times']"></fa-icon>
     </a>
     <div class="login_nav">
-      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+      <form *ngIf="!isLoggedIn" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
         <div class="login_form-group">
           <div class="form-group__item">
             <label for="email">E-mail</label>
@@ -15,22 +15,26 @@
             <input ngModel type="password" id="password" name="password" required minlength="6" />
           </div>
         </div>
-        <div class="login_button-group">
-          <button class="btn_accent" type="submit" [disabled]="!authForm.valid">
+        <div *ngIf="isLoading" style="text-align: center">
+          <app-loader-spinner></app-loader-spinner>
+        </div>
+        <div *ngIf="!isLoading" class="login_button-group">
+          <button *ngIf="!isLoggedIn" class="btn_accent" type="submit" [disabled]="!authForm.valid">
             {{ isLoginMode ? 'Log In' : 'Sing Up' }}
           </button>
-          <a class="login_nav__item" (click)="onSwitchMode()" type="button">
+          <a *ngIf="!isLoggedIn" class="login_nav__item" (click)="onSwitchMode()" type="button">
             Switch to {{ isLoginMode ? 'Sing Up' : 'Log In' }}
           </a>
         </div>
       </form>
+      <p class="error_alert" *ngIf="error">{{ error }}</p>
       <!-- <div>
         <a *ngIf="!isLoggedIn" (click)="login()" routerLink="" class="login_nav__item">Login</a>
         <a *ngIf="isLoggedIn" (click)="logout()" class="login_nav__item">Logout</a>
       </div> -->
-      <div class="login_nav__item">
-        <a routerLink="/user-page">User page</a>
-      </div>
+      <button *ngIf="isLoggedIn" class="btn_accent logout_btn" type="button" (click)="onLogOut()">
+        Log out
+      </button>
     </div>
   </div>
 </div>
