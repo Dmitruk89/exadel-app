@@ -33,6 +33,7 @@ export class LoginComponent {
   isLoggedIn = this.authService.isLoggedIn;
   isLoginMode = true;
   isVisible = false;
+  isLoading = false;
 
   onClick(event: MouseEvent): void {
     if (!(event.target as HTMLTextAreaElement).closest('.login_bar')) {
@@ -61,6 +62,7 @@ export class LoginComponent {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
+    this.isLoading = true;
     const email = form.value.email;
     const password = form.value.password;
 
@@ -75,9 +77,11 @@ export class LoginComponent {
       authObservable.subscribe({
         next: (res) => {
           console.log(res);
+          this.isLoading = false;
         },
         error: (errorMessage) => {
           console.log(errorMessage);
+          this.isLoading = false;
         },
       });
     }
