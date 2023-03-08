@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 header {
-  height: 100px;
+  height: $header-height;
 }
 
 .header_container {

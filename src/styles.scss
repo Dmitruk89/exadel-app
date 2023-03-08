@@ -5,6 +5,9 @@ $accent-color: #0261b4;
 $accent-hover-color: #0058a3;
 $overlay-color: rgba(221, 221, 221, 0.6);
 
+$header-height: 100px;
+$footer-height: 100px;
+
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +44,7 @@ a {
 }
 
 .page {
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - $header-height - $footer-height);
   padding: 10px 0;
 }
 

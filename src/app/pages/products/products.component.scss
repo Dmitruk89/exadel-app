@@ -1,72 +1,71 @@
-.product_card_container{
-    display: flex;
-    gap: 10px;
-    margin-top: 4rem;
+.product_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 4rem;
 }
 
 .add_to_cart_button {
-    opacity: 0;
-    text-align: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    color: white;
-    background-color: #006ac7;
-    position: absolute;
-    bottom: 0;
-    right: 1rem;
-    transition: .3s;
+  opacity: 0;
+  text-align: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  background-color: #006ac7;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  transition: 0.3s;
 
-    fa-icon {
-        position:relative;
-        top: calc(50% - 9px);
-    }
+  fa-icon {
+    position: relative;
+    top: calc(50% - 9px);
+  }
 
-    &:hover {
-      background-color: #0058a3;
-    }
-
+  &:hover {
+    background-color: #0058a3;
+  }
 }
 
 .product_card {
-    width: 250px;
-    cursor: pointer;
-    position: relative;
+  width: 250px;
+  cursor: pointer;
+  position: relative;
 
-    img {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
-    p {
-        padding-bottom: 0.6rem;
-    }
+  p {
+    padding-bottom: 0.6rem;
+  }
 
-    .product_name, .product_price {
-        font-weight: 600;
-    }
+  .product_name,
+  .product_price {
+    font-weight: 600;
+  }
 
-    .product_name {
-        font-size: 1.1rem;
-        line-height: 1.3rem;
-        
-    }
+  .product_name {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+  }
 
-    .product_price {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-    }
+  .product_price {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
 
-    &:hover > .product_name {
-        text-decoration: underline;
-    }
+  &:hover > .product_name {
+    text-decoration: underline;
+  }
 
-    &:hover > .add_to_cart_button {
-        opacity: 100;
-    }
-
+  &:hover > .add_to_cart_button {
+    opacity: 100;
+  }
 }
 
 .button_pressed {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
