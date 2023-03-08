@@ -1,7 +1,7 @@
-@import "../../../styles.scss";
+@import '../../../styles.scss';
 
 .footer {
-  height: 100px;
+  min-height: $footer-height;
 }
 
 .footer_container {
