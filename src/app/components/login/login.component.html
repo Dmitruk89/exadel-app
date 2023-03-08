@@ -27,6 +27,7 @@
           </a>
         </div>
       </form>
+      <p class="error_alert" *ngIf="error">{{ error }}</p>
       <!-- <div>
         <a *ngIf="!isLoggedIn" (click)="login()" routerLink="" class="login_nav__item">Login</a>
         <a *ngIf="isLoggedIn" (click)="logout()" class="login_nav__item">Logout</a>

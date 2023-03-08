@@ -34,6 +34,7 @@ export class LoginComponent {
   isLoginMode = true;
   isVisible = false;
   isLoading = false;
+  error = null;
 
   onClick(event: MouseEvent): void {
     if (!(event.target as HTMLTextAreaElement).closest('.login_bar')) {
@@ -63,6 +64,7 @@ export class LoginComponent {
   onSubmit(form: NgForm) {
     console.log(form.value);
     this.isLoading = true;
+    this.error = null;
     const email = form.value.email;
     const password = form.value.password;
 
@@ -80,7 +82,7 @@ export class LoginComponent {
           this.isLoading = false;
         },
         error: (errorMessage) => {
-          console.log(errorMessage);
+          this.error = errorMessage;
           this.isLoading = false;
         },
       });
