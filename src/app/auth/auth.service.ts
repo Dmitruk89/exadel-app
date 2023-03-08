@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, Subject, tap, throwError } from 'rxjs';
+import { User } from './user.model';
 
 export interface AuthResponseData {
   idToken: string;
@@ -16,6 +17,8 @@ export interface AuthResponseData {
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
+
+  user = new Subject<User>();
   isLoggedIn = false;
   redirectUrl = '/';
 
@@ -37,7 +40,17 @@ export class AuthService {
           returnSecureToken: true,
         },
       )
-      .pipe(catchError((errorRes) => this.handleError(errorRes)));
+      .pipe(
+        catchError((errorRes) => this.handleError(errorRes)),
+        tap((resData) => {
+          this.handleAuthentication(
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            +resData.expiresIn,
+          );
+        }),
+      );
   }
 
   signup(email: string, password: string) {
@@ -50,7 +63,26 @@ export class AuthService {
           returnSecureToken: true,
         },
       )
-      .pipe(catchError((errorRes) => this.handleError(errorRes)));
+      .pipe(
+        catchError((errorRes) => this.handleError(errorRes)),
+        tap((resData) => {
+          this.handleAuthentication(
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            +resData.expiresIn,
+          );
+        }),
+      );
+  }
+
+  private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    const user = new User(email, userId, token, expirationDate);
+    this.user.next(user);
+    this.isLoggedIn = true;
+    localStorage.setItem('userData', JSON.stringify(user));
+    console.log(localStorage.getItem('userData'));
   }
 
   private handleError(errorRes: any) {
