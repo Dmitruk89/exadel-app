@@ -19,12 +19,25 @@ export class AuthService {
   isLoggedIn = false;
   redirectUrl = '/';
 
-  login(): void {
-    this.isLoggedIn = true;
-  }
+  // login(): void {
+  //   this.isLoggedIn = true;
+  // }
 
   logout(): void {
     this.isLoggedIn = false;
+  }
+
+  login(email: string, password: string) {
+    return this.http
+      .post<AuthResponseData>(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCjV88EL6hejzQDstLTC41N-Pa9g21y8kA',
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        },
+      )
+      .pipe(catchError((errorRes) => this.handleError(errorRes)));
   }
 
   signup(email: string, password: string) {

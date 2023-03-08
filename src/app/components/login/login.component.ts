@@ -68,25 +68,28 @@ export class LoginComponent {
     const email = form.value.email;
     const password = form.value.password;
 
-    let authObservable: Observable<AuthResponseData>;
+    let auth$: Observable<AuthResponseData>;
 
     if (!form.valid) {
       return;
     }
 
-    if (!this.isLoginMode) {
-      authObservable = this.authService.signup(email, password);
-      authObservable.subscribe({
-        next: (res) => {
-          console.log(res);
-          this.isLoading = false;
-        },
-        error: (errorMessage) => {
-          this.error = errorMessage;
-          this.isLoading = false;
-        },
-      });
+    if (this.isLoginMode) {
+      auth$ = this.authService.login(email, password);
+    } else {
+      auth$ = this.authService.signup(email, password);
     }
+
+    auth$.subscribe({
+      next: (res) => {
+        console.log(res);
+        this.isLoading = false;
+      },
+      error: (errorMessage) => {
+        this.error = errorMessage;
+        this.isLoading = false;
+      },
+    });
 
     form.reset();
   }
