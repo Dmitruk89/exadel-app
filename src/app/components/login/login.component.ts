@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthResponseData, AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -46,19 +48,41 @@ export class LoginComponent {
     this.isVisible = !this.isVisible;
   }
 
-  login(): void {
-    this.authService.login();
-    this.isLoggedIn = this.authService.isLoggedIn;
-  }
+  // login(): void {
+  //   this.authService.login();
+  //   this.isLoggedIn = this.authService.isLoggedIn;
+  // }
 
-  logout(): void {
-    this.authService.logout();
-    this.isLoggedIn = this.authService.isLoggedIn;
-    this.router.navigate(['/']);
-  }
+  // logout(): void {
+  //   this.authService.logout();
+  //   this.isLoggedIn = this.authService.isLoggedIn;
+  //   this.router.navigate(['/']);
+  // }
 
   onSubmit(form: NgForm) {
     console.log(form.value);
+    const email = form.value.email;
+    const password = form.value.password;
+
+    let authObservable: Observable<AuthResponseData>;
+
+    if (!form.valid) {
+      return;
+    }
+
+    if (!this.isLoginMode) {
+      authObservable = this.authService.signup(email, password);
+      authObservable.subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (errorMessage) => {
+          console.log(errorMessage);
+        },
+      });
+    }
+
+    form.reset();
   }
 
   onSwitchMode() {
