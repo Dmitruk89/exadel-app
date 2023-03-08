@@ -18,17 +18,9 @@ export interface AuthResponseData {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  user = new Subject<User>();
+  user = new Subject<User | null>();
   isLoggedIn = false;
   redirectUrl = '/';
-
-  // login(): void {
-  //   this.isLoggedIn = true;
-  // }
-
-  logout(): void {
-    this.isLoggedIn = false;
-  }
 
   login(email: string, password: string) {
     return this.http
@@ -74,6 +66,12 @@ export class AuthService {
           );
         }),
       );
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    this.user.next(null);
+    localStorage.removeItem('userData');
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
