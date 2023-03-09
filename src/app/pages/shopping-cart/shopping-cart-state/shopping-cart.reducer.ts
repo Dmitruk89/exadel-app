@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/typedef */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { createFeature, createReducer, on } from '@ngrx/store';
 
 import * as actions from './shopping-cart.actions';
@@ -27,5 +25,17 @@ export const shoppingCartFeature = createFeature({
     })),
   ),
 });
+
+export const ShoppingCartReducer = createReducer(
+  initialState,
+  on(actions.addProduct, (state: shoppingCartState, { product }) => ({
+    ...state,
+    products: [...state.products, product],
+  })),
+  on(actions.removeProduct, (state: shoppingCartState, { product }) => ({
+    ...state,
+    products: state.products.filter((prod) => prod.id !== product.id),
+  })),
+);
 
 export const { name, reducer, selectCartState, selectProducts } = shoppingCartFeature;
