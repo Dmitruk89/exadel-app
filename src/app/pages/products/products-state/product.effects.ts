@@ -1,9 +1,9 @@
-import { IProduct } from './product.model';
 import * as actions from './product.action';
 import { ProductsService } from 'src/app/services/products.service';
 import { Injectable } from '@angular/core';
 import { ofType, Actions, createEffect } from '@ngrx/effects';
 import { switchMap, Observable, of } from 'rxjs';
+import { Product } from 'src/app/interfaces/interfaces';
 
 @Injectable()
 export class ProductEffects {
@@ -12,8 +12,8 @@ export class ProductEffects {
   getProducts$ = createEffect(() =>
     this._actions$.pipe(
       ofType(actions.getProducts.type),
-      switchMap((): Observable<IProduct[]> => this._productsService.getProducts()),
-      switchMap((products: IProduct[]) => of(actions.getProductsSuccess({ products }))),
+      switchMap((): Observable<Product[]> => this._productsService.getProducts()),
+      switchMap((products: Product[]) => of(actions.getProductsSuccess({ products }))),
     ),
   );
 }

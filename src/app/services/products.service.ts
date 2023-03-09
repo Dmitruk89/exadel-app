@@ -1,16 +1,14 @@
-import { IProduct } from '../pages/products/products-state/product.model';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Products } from '../constants/products';
+import { Observable } from 'rxjs';
 import { DataStorageService } from './data-storage.service';
+import { Product } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
   constructor(private dataStorageService: DataStorageService) {}
-  getProducts(): Observable<IProduct[]> {
-    //return of(Products);
+  getProducts(): Observable<Product[]> {
     return this.dataStorageService.fetch();
   }
 }

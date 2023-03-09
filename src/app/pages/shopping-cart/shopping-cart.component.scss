@@ -1,76 +1,76 @@
 .product_cart_layout {
-    display: flex;   
+  display: flex;
 }
 
 .product_card_container {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 4rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
 }
 
 .order_detail_container {
-    width: 50%;
-    padding: 3rem;
+  width: 50%;
+  padding: 3rem;
 
-    .detail_total_price {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-top: 2rem;
+  .detail_total_price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
 
-        span {
-            float: right;
-        }
+    span {
+      float: right;
     }
+  }
 
-    .place_order_btn {
-        margin-top: 3rem;
-        padding: 2rem;
-    }
+  .place_order_btn {
+    margin-top: 3rem;
+    padding: 2rem;
+  }
 }
 
 .product_card {
-    width: 100%;
-    position: relative;
-    border-bottom: 1px solid gray;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid gray;
 
-    &:last-child {
-        border-bottom: none;
-    }
+  &:last-child {
+    border-bottom: none;
+  }
 
-    img {
-        width: 100px;
-        margin-bottom: 2rem;
-        margin-right: 2rem;
-        float: left;
-    }
+  img {
+    width: 100px;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    float: left;
+  }
 
-    p {
-        padding-bottom: 0.6rem;
-    }
+  p {
+    padding-bottom: 0.6rem;
+  }
 
-    .product_name, .product_price {
-        font-weight: 600;
-    }
+  .product_name,
+  .product_price {
+    font-weight: 600;
+  }
 
-    .product_name {
-        font-size: 1.1rem;
-        line-height: 1.3rem;
-    }
+  .product_name {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+  }
 
-    .product_price {
-        font-size: 1rem;
-        margin-top: 1rem;
-        float: right;
-    }
-
+  .product_price {
+    font-size: 1rem;
+    margin-top: 1rem;
+    float: right;
+  }
 }
 
 .remove_from_cart_button {
-    cursor: pointer;
-    margin-top: 3rem;
-    &:hover {
-        text-decoration: underline;
-    }
+  cursor: pointer;
+  margin-top: 3rem;
+  &:hover {
+    text-decoration: underline;
+  }
 }

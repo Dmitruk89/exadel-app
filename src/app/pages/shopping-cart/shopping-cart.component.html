@@ -1,25 +1,21 @@
-<main class="page">
-    <div class="wrapper">
-      <h2 class="page_title">shopping cart</h2>
-      <div class="product_cart_layout">
-        <div class="product_card_container">
-          <div *ngFor="let product of products$ | async" class="product_card">
-            <img src="{{product.img}}" alt="">
-            <p class="product_name">{{product.name}}</p>
-            <p>{{product.description}}</p>
-            <p class="product_price">{{product.price | currency}}</p>
-            <p (click)="removeFromCart(product)" class="remove_from_cart_button">Remove item</p>
-          </div>
-        </div>
-        <div class="order_detail_container">
-          <h3>Details</h3>
-          <p class="detail_total_price">total: <span class="price">{{totalSum | currency}}</span></p>
-          <button class="place_order_btn">
-            place an order
-          </button>
-        </div>
-
+<div>
+  <h2 class="page_title">shopping cart</h2>
+  <div class="product_cart_layout">
+    <div class="product_card_container">
+      <div *ngFor="let product of products$ | async" class="product_card">
+        <img src="{{ product.img }}" alt="" />
+        <p class="product_name">{{ product.name }}</p>
+        <p>{{ product.description }}</p>
+        <p class="product_price">{{ product.price | currency }}</p>
+        <p (click)="removeFromCart(product)" class="remove_from_cart_button">Remove item</p>
       </div>
-        
     </div>
-  </main>
+    <div class="order_detail_container">
+      <h3>Details</h3>
+      <p class="detail_total_price">
+        total: <span class="price">{{ totalSum | currency }}</span>
+      </p>
+      <button class="place_order_btn">place an order</button>
+    </div>
+  </div>
+</div>

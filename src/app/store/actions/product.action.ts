@@ -1,5 +1,5 @@
-import { IProduct } from './../models/product.model';
 import { Action, createAction, props } from '@ngrx/store';
+import { Product } from 'src/app/interfaces/interfaces';
 
 export enum EProductActions {
   GET_PRODUCTS = '[PRODUCT] Get Products',
@@ -14,7 +14,7 @@ export class GetProducts implements Action {
 
 export class GetProductsSuccess implements Action {
   readonly type = EProductActions.GET_PRODUCTS_SUCCESS;
-  constructor(public payload: IProduct[]) {}
+  constructor(public payload: Product[]) {}
 }
 
 export class GetProduct implements Action {
@@ -24,12 +24,12 @@ export class GetProduct implements Action {
 
 export class GetProductSuccess implements Action {
   readonly type = EProductActions.GET_PRODUCT_SUCCESS;
-  constructor(public payload: IProduct) {}
+  constructor(public payload: Product) {}
 }
 
 export const getProd = createAction(
   '[PRODUCT] Get Products Success',
-  props<{ products: IProduct[] }>(),
+  props<{ products: Product[] }>(),
 );
 
 export type ProductActions = GetProducts | GetProductsSuccess | GetProduct | GetProductSuccess;

@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/typedef */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { IProduct } from './product.model';
 import { createFeature, createReducer, on } from '@ngrx/store';
 
 import * as actions from './product.action';
+import { Product } from 'src/app/interfaces/interfaces';
 
-interface State {
-  products: IProduct[];
+interface productState {
+  products: Product[];
   loading: boolean;
 }
 
-const initialState: State = {
+const initialState: productState = {
   products: [],
   loading: false,
 };
@@ -19,11 +19,11 @@ export const productsFeature = createFeature({
   name: 'products',
   reducer: createReducer(
     initialState,
-    on(actions.getProducts, (state: State) => ({
+    on(actions.getProducts, (state: productState) => ({
       ...state,
       loading: true,
     })),
-    on(actions.getProductsSuccess, (state: State, { products }) => ({
+    on(actions.getProductsSuccess, (state: productState, { products }) => ({
       ...state,
       products,
       loading: false,
