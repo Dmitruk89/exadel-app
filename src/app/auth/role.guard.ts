@@ -7,8 +7,8 @@ import { AuthService } from './auth.service';
 })
 export class RoleGuard implements CanActivate {
   constructor(
-    private authService: AuthService,
-    private router: Router,
+    public authService: AuthService,
+    public router: Router,
     private route: ActivatedRoute,
   ) {}
   canActivate(route: ActivatedRouteSnapshot): boolean {
@@ -16,12 +16,12 @@ export class RoleGuard implements CanActivate {
     const actualRole = this.authService.currentUser?.role;
 
     if (actualRole !== expectedRole) {
-      console.log('navigate to info');
+      console.log('welcome user!');
 
-      this.router.navigate(['info'], { relativeTo: this.route });
+      this.router.navigate(['user-page/info']);
       return false;
     }
-    console.log('navigate to admin');
+    console.log('welcome admin!');
     return true;
   }
 }

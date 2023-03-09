@@ -1,9 +1,9 @@
-import { IProduct } from '../models/product.model';
+import { Product } from 'src/app/interfaces/interfaces';
 
-export interface ICartState {
-  products: IProduct[] | [];
+export interface CartState {
+  products: Product[] | [];
 }
 
-export const initialCartState: ICartState = {
+export const initialCartState: CartState = {
   products: [],
 };

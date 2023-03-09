@@ -21,7 +21,6 @@ export class AuthService {
   user = new Subject<User | null>();
   currentUser: User | null = null;
   isLoggedIn = false;
-  //redirectUrl = '/';
 
   login(email: string, password: string) {
     return this.http

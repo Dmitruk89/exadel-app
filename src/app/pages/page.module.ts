@@ -31,8 +31,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavigationComponent,
     LoginComponent,
     SpinnerComponent,
-    AdminPageComponent,
-    UserInfoPageComponent,
     PageNotFoundComponent,
   ],
   imports: [

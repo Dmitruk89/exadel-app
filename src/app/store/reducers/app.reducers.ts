@@ -1,10 +1,10 @@
 import { ActionReducerMap } from '@ngrx/store';
 
-import { IAppState } from '../state/app.state';
+import { AppState } from '../state/app.state';
 import { CartReducers } from './cart.reducer';
 import { ProductReducers } from './product.reducer';
 
-export const appReducers: ActionReducerMap<IAppState, any> = {
+export const appReducers: ActionReducerMap<AppState, any> = {
   products: ProductReducers,
   cart: CartReducers,
 };

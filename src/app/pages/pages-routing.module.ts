@@ -25,10 +25,6 @@ const pageRoutes: Routes = [
         loadChildren: () => import('./user-page/user-page.module').then((m) => m.UserPageModule),
       },
       {
-        path: 'contacts',
-        loadChildren: () => import('./contacts/contacts.module').then((m) => m.ContactsModule),
-      },
-      {
         path: '',
         redirectTo: '/products',
         pathMatch: 'full',

@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/typedef */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { IProduct } from '../../products/products-state/product.model';
 import { createFeature, createReducer, on } from '@ngrx/store';
 
 import * as actions from './shopping-cart.actions';
+import { Product } from 'src/app/interfaces/interfaces';
 
-interface State {
-  products: IProduct[];
+interface shoppingCartState {
+  products: Product[];
 }
 
-const initialState: State = {
+const initialState: shoppingCartState = {
   products: [],
 };
 
@@ -17,11 +17,11 @@ export const shoppingCartFeature = createFeature({
   name: 'cart',
   reducer: createReducer(
     initialState,
-    on(actions.addProduct, (state: State, { product }) => ({
+    on(actions.addProduct, (state: shoppingCartState, { product }) => ({
       ...state,
       products: [...state.products, product],
     })),
-    on(actions.removeProduct, (state: State, { product }) => ({
+    on(actions.removeProduct, (state: shoppingCartState, { product }) => ({
       ...state,
       products: state.products.filter((prod) => prod.id !== product.id),
     })),

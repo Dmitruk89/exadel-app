@@ -57,17 +57,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isVisible = !this.isVisible;
   }
 
-  // login(): void {
-  //   this.authService.login();
-  //   this.isLoggedIn = this.authService.isLoggedIn;
-  // }
-
-  // logout(): void {
-  //   this.authService.logout();
-  //   this.isLoggedIn = this.authService.isLoggedIn;
-  //   this.router.navigate(['/']);
-  // }
-
   onSubmit(form: NgForm) {
     this.isLoading = true;
     this.error = null;

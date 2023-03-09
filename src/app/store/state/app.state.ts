@@ -1,16 +1,16 @@
-import { ICartState, initialCartState } from './cart.state';
-import { IProductState, initialProductsState } from './products.state';
+import { CartState, initialCartState } from './cart.state';
+import { initialProductsState, ProductState } from './products.state';
 
-export interface IAppState {
-  products: IProductState;
-  cart: ICartState;
+export interface AppState {
+  products: ProductState;
+  cart: CartState;
 }
 
-export const initialAppState: IAppState = {
+export const initialAppState: AppState = {
   products: initialProductsState,
   cart: initialCartState,
 };
 
-export function getInitialState(): IAppState {
+export function getInitialState(): AppState {
   return initialAppState;
 }

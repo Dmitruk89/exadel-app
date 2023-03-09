@@ -1,7 +1,3 @@
-export interface UserData {
-  role: string;
-}
-
 export interface Product {
   id: number;
   category: string;
@@ -9,4 +5,7 @@ export interface Product {
   description: string;
   price: number;
   img: string;
+}
+export interface Cart {
+  products: Product[];
 }

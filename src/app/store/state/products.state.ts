@@ -1,9 +1,9 @@
-import { IProduct } from '../models/product.model';
+import { Product } from 'src/app/interfaces/interfaces';
 
-export interface IProductState {
-  products: IProduct[] | [];
+export interface ProductState {
+  products: Product[] | [];
 }
 
-export const initialProductsState: IProductState = {
+export const initialProductsState: ProductState = {
   products: [],
 };
