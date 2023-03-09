@@ -1,0 +1,40 @@
+<div [@openClose]="isVisible ? 'open' : 'closed'" (click)="onClick($event)" class="login_overlay">
+  <div class="login_bar">
+    <a [@openClose]="isVisible ? 'open' : 'closed'" class="header_icon" (click)="hide()">
+      <fa-icon [icon]="['fas', 'times']"></fa-icon>
+    </a>
+    <div class="login_nav">
+      <form *ngIf="!isLoggedIn" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="login_form-group">
+          <div class="form-group__item">
+            <label for="email">E-mail</label>
+            <input ngModel type="email" id="email" name="email" required email />
+          </div>
+          <div class="form-group__item">
+            <label for="password">Password</label>
+            <input ngModel type="password" id="password" name="password" required minlength="6" />
+          </div>
+        </div>
+        <div *ngIf="isLoading" style="text-align: center">
+          <app-loader-spinner></app-loader-spinner>
+        </div>
+        <div *ngIf="!isLoading" class="login_button-group">
+          <button *ngIf="!isLoggedIn" class="btn_accent" type="submit" [disabled]="!authForm.valid">
+            {{ isLoginMode ? 'Log In' : 'Sing Up' }}
+          </button>
+          <a *ngIf="!isLoggedIn" class="login_nav__item" (click)="onSwitchMode()" type="button">
+            Switch to {{ isLoginMode ? 'Sing Up' : 'Log In' }}
+          </a>
+        </div>
+      </form>
+      <p class="error_alert" *ngIf="error">{{ error }}</p>
+      <!-- <div>
+        <a *ngIf="!isLoggedIn" (click)="login()" routerLink="" class="login_nav__item">Login</a>
+        <a *ngIf="isLoggedIn" (click)="logout()" class="login_nav__item">Logout</a>
+      </div> -->
+      <button *ngIf="isLoggedIn" class="btn_accent logout_btn" type="button" (click)="onLogOut()">
+        Log out
+      </button>
+    </div>
+  </div>
+</div>

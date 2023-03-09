@@ -1,0 +1,58 @@
+@import '../../../styles.scss';
+
+header {
+  height: $header-height;
+}
+
+.header_container {
+  padding: 10px 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: solid 2px $alt-color;
+}
+
+.icon-container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+.header_icon {
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $alt-color;
+  }
+
+  fa-icon {
+    position: relative;
+    top: calc(50% - 10px);
+  }
+}
+
+.visible {
+  left: 100px;
+}
+
+.products_indicator {
+  position: absolute;
+  padding: 4px;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  color: white;
+  background-color: $accent-color;
+}

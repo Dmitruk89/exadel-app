@@ -1,0 +1,89 @@
+@import '../../../styles.scss';
+
+.login_overlay {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: $overlay-color;
+  transition: 0.5s;
+  z-index: 5;
+}
+
+.login_bar {
+  float: right;
+  height: 100vh;
+  width: 500px;
+  background-color: $light-color;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.login_form-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  height: 30vh;
+  color: $light-color;
+  background-color: $accent-color;
+}
+
+.login_nav__item {
+  margin: 20px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.form-group__item {
+  margin-bottom: 20px;
+  input {
+    margin-left: 20px;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 10px 10px;
+    border: 0;
+  }
+}
+
+.header_icon {
+  display: block;
+  position: fixed;
+  top: 20px;
+  margin-right: 20px;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  background-color: $light-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $alt-color;
+  }
+
+  fa-icon {
+    position: relative;
+    top: calc(50% - 10px);
+  }
+}
+
+.login_button-group {
+  padding: 20px;
+  text-align: center;
+}
+
+.logout_btn {
+  margin: 20px;
+}
+
+.error_alert {
+  color: red;
+  text-align: center;
+}

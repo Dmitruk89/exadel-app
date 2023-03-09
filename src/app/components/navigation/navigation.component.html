@@ -1,0 +1,18 @@
+<nav [@openClose]="isVisible ? 'open' : 'closed'" (click)="hide()" class="navigation">
+  <div class="overlay">
+    <div class="navigation__container">
+      <a class="navigation_icon" (click)="toggle()">
+        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+      </a>
+
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a routerLink="/products">Products</a>
+        </li>
+        <li class="navigation__item">
+          <a routerLink="/user-page">User page</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
