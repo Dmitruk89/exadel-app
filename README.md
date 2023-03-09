@@ -2,6 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
+## Technologies used
+
+- Angular Router.
+- Lazy loaded modules.
+- Guards.
+- Angular template-driven form for login.
+- Authentication with login/password using firebase API
+- In demo porpuses the communication between components implemented with usage both: RxJs subjects and NgRx store.
+- Store Devtools Module for debugging NgRx.
+- Static analisys testing through Eslint-typescript and Pretier.
+- Angular animation.
+- Font awesome.
+
+## Currently working on
+
+- refactoring NgRx store for components.
+- providing unit tests
+
+## Recent updates
+
+- Added user roles for admin to access admin page and for the rest of users to access the info page.
+- All the produts was added to the Firebase database through data-storage component.
+- Loading spinner was added for better UX.
+- Authentication process with Firebase API.
+- Styles was added for major components
+
+## Comming updates
+
+- Admin can create and save products to database.
+- User can add products to favorites, will be visible on info user's page
+- Users can placing an order
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

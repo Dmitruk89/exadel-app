@@ -13,7 +13,7 @@ import { shoppingCartFeature } from './shopping-cart-state/shopping-cart.reducer
 export class ShoppingCartComponent implements OnInit {
   products$ = this._store.select(shoppingCartFeature.selectProducts);
   totalSum = 0;
-
+  //TODO: split App state to CartState and ProductState
   constructor(private _store: Store<AppState>) {}
 
   ngOnInit(): void {

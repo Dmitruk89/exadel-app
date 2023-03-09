@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/typedef */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { createFeature, createReducer, on } from '@ngrx/store';
 
 import * as actions from './product.action';
