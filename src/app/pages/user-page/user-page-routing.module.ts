@@ -7,6 +7,7 @@ import { UserPageComponent } from './user-page.component';
 import { Users } from 'src/app/constants/users';
 import { UserInfoPageComponent } from '../user-info-page/user-info-page.component';
 import { AdminPageComponent } from '../admin-page/admin-page.component';
+import { RoleGuard } from 'src/app/auth/role.guard';
 
 const userPageRoutes: Routes = [
   {
@@ -16,12 +17,21 @@ const userPageRoutes: Routes = [
     component: UserPageComponent,
     children: [
       {
-        path: 'admin',
-        component: AdminPageComponent,
-      },
-      {
-        path: 'user',
-        component: UserInfoPageComponent,
+        path: '',
+        children: [
+          {
+            path: 'admin',
+            canActivate: [RoleGuard],
+            data: {
+              expectedRole: 'admin',
+            },
+            component: AdminPageComponent,
+          },
+          {
+            path: 'info',
+            component: UserInfoPageComponent,
+          },
+        ],
       },
     ],
   },

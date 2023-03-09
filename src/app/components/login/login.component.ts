@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       next: (res) => {
         console.log(res);
         this.isLoading = false;
-        this.router.navigate(['/user-page']);
+        this.router.navigate(['/user-page/admin']);
       },
       error: (errorMessage) => {
         this.error = errorMessage;

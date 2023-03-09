@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     if (!this.authService.isLoggedIn) {
-      console.log('please login as admin!');
+      console.log('please login!');
       return false;
     }
     console.log('please come in!');

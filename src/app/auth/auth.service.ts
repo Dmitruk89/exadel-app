@@ -21,7 +21,7 @@ export class AuthService {
   user = new Subject<User | null>();
   currentUser: User | null = null;
   isLoggedIn = false;
-  redirectUrl = '/';
+  //redirectUrl = '/';
 
   login(email: string, password: string) {
     return this.http
@@ -82,7 +82,6 @@ export class AuthService {
     this.user.next(user);
     this.isLoggedIn = true;
     localStorage.setItem('userData', JSON.stringify(user));
-    console.log(localStorage.getItem('userData'));
   }
 
   private handleError(errorRes: any) {

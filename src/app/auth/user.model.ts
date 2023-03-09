@@ -1,5 +1,5 @@
 export class User {
-  private role: string;
+  private _role: string;
   constructor(
     public email: string,
     public id: string,
@@ -7,10 +7,17 @@ export class User {
     private _tokenExpirationDate: Date,
   ) {
     if (this.id === 'lmtCSKCub7YwLslEmQBkOaY75rC2') {
-      this.role = 'admin';
+      this._role = 'admin';
     } else {
-      this.role = 'user';
+      this._role = 'user';
     }
+  }
+
+  get role() {
+    if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
+      return '';
+    }
+    return this._role;
   }
 
   get token() {

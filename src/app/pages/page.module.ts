@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserInfoPageComponent } from './user-info-page/user-info-page.component
     SpinnerComponent,
     AdminPageComponent,
     UserInfoPageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
