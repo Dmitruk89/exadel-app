@@ -4,15 +4,15 @@
       <fa-icon [icon]="['fas', 'times']"></fa-icon>
     </a>
     <div class="login_nav">
-      <form *ngIf="!isLoggedIn" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+      <form *ngIf="!isLoggedIn" [formGroup]="authForm" (ngSubmit)="onSubmit()">
         <div class="login_form-group">
           <div class="form-group__item">
             <label for="email">E-mail</label>
-            <input ngModel type="email" id="email" name="email" required email />
+            <input ngModel type="email" id="email" formControlName="email" />
           </div>
           <div class="form-group__item">
             <label for="password">Password</label>
-            <input ngModel type="password" id="password" name="password" required minlength="6" />
+            <input ngModel type="password" id="password" formControlName="password" />
           </div>
         </div>
         <div *ngIf="isLoading" style="text-align: center">

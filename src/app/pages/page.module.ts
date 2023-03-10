@@ -17,10 +17,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartStateModule } from './shopping-cart/shopping-cart-state/shopping-cart.state.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -39,6 +37,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PagesRoutingModule,
     FontAwesomeModule,
     ShoppingCartStateModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class PageModule {

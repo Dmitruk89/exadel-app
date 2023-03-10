@@ -24,6 +24,6 @@ describe('FooterComponent', () => {
   it('should contein copyright', () => {
     const footerElement: HTMLElement = fixture.nativeElement;
     const footerContainer = footerElement.querySelector('.footer_container')!;
-    expect(footerContainer.textContent).toEqual('© IKEA');
+    expect(footerContainer.textContent).toEqual('© IKAE');
   });
 });

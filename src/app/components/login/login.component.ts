@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AuthResponseData, AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { Observable, Subscription } from 'rxjs';
 
@@ -29,13 +29,23 @@ import { Observable, Subscription } from 'rxjs';
   ],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(public authService: AuthService, public router: Router) {}
   user$!: Subscription;
-  isLoggedIn = this.authService.isLoggedIn;
+  isLoggedIn!: boolean;
   isLoginMode = true;
   isVisible = false;
   isLoading = false;
   error = null;
+
+  authForm = this.formBuilder.group({
+    email: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+  });
+
+  constructor(
+    public authService: AuthService,
+    public router: Router,
+    private formBuilder: FormBuilder,
+  ) {}
 
   ngOnInit() {
     this.user$ = this.authService.user.subscribe((user) => {
@@ -57,15 +67,15 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isVisible = !this.isVisible;
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit() {
     this.isLoading = true;
     this.error = null;
-    const email = form.value.email;
-    const password = form.value.password;
+    const email = this.authForm.value.email;
+    const password = this.authForm.value.password;
 
     let auth$: Observable<AuthResponseData>;
 
-    if (!form.valid) {
+    if (!this.authForm.valid) {
       return;
     }
 
@@ -87,7 +97,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       },
     });
 
-    form.reset();
+    this.authForm.reset();
   }
 
   onSwitchMode() {
