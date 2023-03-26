@@ -1,6 +1,7 @@
 # ExadelApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+
 deploy version is here: https://incandescent-chebakia-b9b187.netlify.app/products
 
 ## Technologies used
